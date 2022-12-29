@@ -1,0 +1,3 @@
+class EditorWindow extends BaseSetupWindow {
+
+}

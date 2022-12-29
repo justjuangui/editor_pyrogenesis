@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+	<script directory="gui/common/"/>
+	<script directory="gui/editorcommon/EditorSettings/" />
+	<script directory="editorsettings/"/>
+	<script directory="editorsettings/EditorAttributes/"/>
+
+	<script directory="gui/editor/"/>
+
+	<object name="setupWindow">
+
+		<object name="topPanel" type="image" size="-3 0 100%+3 36">
+		</object>
+
+		<object name="leftPanel" size="0 42 200 100%">
+		</object>
+
+		<object name="bottomPanel" size="200 100%-150 100% 100%">
+		</object>
+	</object>
+</objects>
