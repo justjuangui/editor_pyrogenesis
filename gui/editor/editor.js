@@ -5,7 +5,6 @@ function init(initData, hotloadData)
 {
 	// In the editor the map is reveales for all
 	// we use here because preventing change settings from the map
-	warn("revealing");
 	Engine.RevealMap();
 
 	// disabled constraint in camera

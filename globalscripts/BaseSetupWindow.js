@@ -80,6 +80,26 @@ class BaseSetupWindow
 		this.getHotloadDataHandlers.delete(handler);
 	}
 
+	registerHandleInputBeforeGuiHandler(handler)
+	{
+		this.handleInputBeforeGuiHandlers.add(handler);
+	}
+
+	unregisterHandleInputBeforeGuiHandler(handler)
+	{
+		this.handleInputBeforeGuiHandlers.delete(handler);
+	}
+
+	registerHandleInputAfterGuiHandler(handler)
+	{
+		this.handleInputAfterGuiHandlers.add(handler);
+	}
+
+	unregisterHandleInputAfterGuiHandler(handler)
+	{
+		this.handleInputAfterGuiHandlers.delete(handler);
+	}
+
 	getHotloadData()
 	{
 		let object = {};

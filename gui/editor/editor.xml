@@ -10,7 +10,8 @@
 
 	<object name="setupWindow">
 
-		<object name="topPanel" type="image" size="-3 0 100%+3 36">
+		<object name="topPanel" type="image" sprite="topPanel" size="-3 0 100%+3 36">
+			<include directory="gui/editor/Pages/TopPanel/" />
 		</object>
 
 		<object name="leftPanel" size="0 42 200 100%">
@@ -18,5 +19,7 @@
 
 		<object name="bottomPanel" size="200 100%-150 100% 100%">
 		</object>
+
+		<include directory="gui/editor/Pages/General/" />
 	</object>
 </objects>
