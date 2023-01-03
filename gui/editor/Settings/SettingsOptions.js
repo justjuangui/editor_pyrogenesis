@@ -2,7 +2,9 @@ EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.SettingsOpti
 	{
 		"label": translateWithContext("Editor settings tab name", "Map"),
 		"settings": [
-			"MapName"
+			"MapName",
+			"MapDescription",
+			"CircularMap"
 		]
 	},
 	{

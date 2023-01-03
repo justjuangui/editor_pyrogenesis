@@ -1,4 +1,4 @@
-EditorSettings.prototype.Attributes.EditorMapName = class EditorMapName extends EditorSetting
+EditorSettings.prototype.Attributes.EditorMapName = class extends EditorSetting
 {
 	init()
 	{
