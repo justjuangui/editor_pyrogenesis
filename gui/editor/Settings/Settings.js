@@ -122,8 +122,8 @@ EditorWindow.prototype.ClassSetupWindowPages.SettingsPage = class
 EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.SaveCaption = translate("Save");
 EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.SaveTooltip = translate("Save");
 
-EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.CancelCaption = translate("Cancel");
-EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.CancelTooltip = translate("Cancel");
+EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.CancelCaption = translate("Close");
+EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.CancelTooltip = translate("Close");
 
 EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.TitleCaption = translate("Map Settings");
 
