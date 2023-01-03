@@ -10,4 +10,9 @@ class EditorSetupSettings extends BaseSettings {
 
 		this.mapEditorCache = mapEditorCache;
 	}
+
+	exceptObjectKeys()
+	{
+		return ["mapEditorCache", "setupWindow"];
+	}
 }

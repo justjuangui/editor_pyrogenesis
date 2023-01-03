@@ -7,14 +7,12 @@ EditorSettings.prototype.Attributes.EditorMapName = class EditorMapName extends 
 
 	toInitAttributes(attribs)
 	{
-		if (attribs.editorType)
-			attribs.settings.Name = this.name;
+		attribs.settings.Name = this.name;
 	}
 
 	fromInitAttributes(attribs)
 	{
-		if (attribs.editorType)
-			this.setName(attribs.settings.Name);
+		this.setName(attribs.settings.Name);
 	}
 
 	setName(name)

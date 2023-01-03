@@ -36,12 +36,18 @@ class BaseSettings
 		return attribs;
 	}
 
+	exceptObjectKeys()
+	{
+		return [];
+	}
+
 	fromInitAttributes(attribs)
 	{
 		// Settings may depend on eachother. Some selections of settings
 		// might be illegal. So keep looping through all settings until
 		// we find something stable.
-		const components = Object.keys(this);
+		const exceptKeys = this.exceptObjectKeys();
+		const components = Object.keys(this).filter(k => !exceptKeys.includes(k));
 
 		// To check in the loop below if something change we just compare
 		// the entire component. However, we must ignore the "settings"
@@ -55,6 +61,9 @@ class BaseSettings
 			let reInit = false;
 			for (const comp in this)
 			{
+				if (exceptKeys.includes(comp))
+					continue;
+
 				const oldSettings = clone(getComponentData(comp));
 				if (this[comp].fromInitAttributes)
 					this[comp].fromInitAttributes(attribs);

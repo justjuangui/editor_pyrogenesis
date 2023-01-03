@@ -1,7 +1,24 @@
 class EditorSettings extends BaseSettings {
-	init()
+	init(mapEditorCache)
 	{
-		super.init(EditorSettings.prototype.Attributes);
+		super.init();
+
+		if (!mapEditorCache)
+			mapEditorCache = new MapEditorCache();
+
+		mapEditorCache.setSettings(this);
+
+		this.mapEditorCache = mapEditorCache;
+	}
+
+	exceptObjectKeys()
+	{
+		return ["mapEditorCache", "setupWindow"];
+	}
+
+	setupInitAttributesObject()
+	{
+		return { settings: {} };
 	}
 }
 

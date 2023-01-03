@@ -62,4 +62,10 @@
 		<effect grayscale=""/>
 		<image texture="editor/icons/bkg/portrait_black.dds" size="0 0 100% 100%"/>
 	</sprite>
+
+	<sprite name="BackgroundTranslucent">
+		<image backcolor="0 0 0 85"
+			size="0 0 100% 100%"
+		/>
+	</sprite>
 </sprites>
