@@ -6,4 +6,15 @@
 		delay="0"
 		hide_object="true"
 	/>
+
+	<tooltip name="sessionToolTip"
+		anchor="top"
+		buffer_zone="4"
+		delay="100"
+		font="sans-14"
+		maxwidth="400"
+		offset="16 32"
+		sprite="BackgroundSessionTooltip"
+		textcolor="255 255 255"
+	/>
 </setup>
