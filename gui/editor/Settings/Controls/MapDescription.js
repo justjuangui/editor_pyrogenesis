@@ -8,14 +8,14 @@ classEditorSettingControls.MapDescription = class extends EditorSettingControlTe
 			this.setupWindow.controls.editorSettingsController.registerSettingsLoadedHandler(() => {
 				this.render();
 			});
-			this.setupWindow.controls.editorSettings.editorMapDescription.watch(() => this.render(), ["description"]);
+			this.setupWindow.controls.editorSettings.editorMapGeneral.watch(() => this.render(), ["description"]);
 			this.render();
 		});
 	}
 
 	render()
 	{
-		this.setValue(this.setupWindow.controls.editorSettings.editorMapDescription.description);
+		this.setValue(this.setupWindow.controls.editorSettings.editorMapGeneral.description);
 	}
 
 	getAutocompleteEntries()
@@ -26,12 +26,12 @@ classEditorSettingControls.MapDescription = class extends EditorSettingControlTe
 	onTextEdit()
 	{
 		if (!this.isInGuiUpdate)
-			this.setupWindow.controls.editorSettings.editorMapDescription.setDescription(this.input.caption);
+			this.setupWindow.controls.editorSettings.editorMapGeneral.setDescription(this.input.caption);
 	}
 };
 
-classEditorSettingControls.MapDescription.prototype.TitleCaption = translate("Map Description");
+classEditorSettingControls.MapDescription.prototype.TitleCaption = translateWithContext("editor", "Map Description");
 
-classEditorSettingControls.MapDescription.prototype.Tooltip = translate("Set the description of your map");
+classEditorSettingControls.MapDescription.prototype.Tooltip = translateWithContext("editor", "Set the description of your map");
 
 classEditorSettingControls.MapDescription.prototype.AutocompleteOrder = 0;

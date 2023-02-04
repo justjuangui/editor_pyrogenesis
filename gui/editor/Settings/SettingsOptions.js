@@ -1,26 +1,28 @@
 EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.SettingsOptions = [
 	{
-		"label": translateWithContext("Editor settings tab name", "Map"),
+		"label": translateWithContext("editor settings tab name", "Map"),
 		"settings": [
 			"MapName",
 			"MapDescription",
-			"CircularMap"
+			"MapPreview",
+			"CircularMap",
+			"RevealMap"
 		]
 	},
 	{
-		"label": translateWithContext("Editor settings tab name", "Player"),
+		"label": translateWithContext("editor settings tab name", "Player"),
 		"settings": [
 
 		]
 	},
 	{
-		"label": translateWithContext("Editor settings tab name", "Game Type"),
+		"label": translateWithContext("editor settings tab name", "Game Type"),
 		"settings": [
 
 		]
 	},
 	{
-		"label": translateWithContext("Editor settings tab name", "Players Settings"),
+		"label": translateWithContext("editor settings tab name", "Players Settings"),
 		"settings": [
 
 		]

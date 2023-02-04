@@ -8,14 +8,14 @@ classEditorSettingControls.CircularMap = class extends EditorSettingControlCheck
 			this.setupWindow.controls.editorSettingsController.registerSettingsLoadedHandler(() => {
 				this.render();
 			});
-			this.setupWindow.controls.editorSettings.editorMapCircular.watch(() => this.render(), ["circularMap"]);
+			this.setupWindow.controls.editorSettings.editorMapGeneral.watch(() => this.render(), ["circularMap"]);
 			this.render();
 		});
 	}
 
 	render()
 	{
-		this.setChecked(this.setupWindow.controls.editorSettings.editorMapCircular.circularMap);
+		this.setChecked(this.setupWindow.controls.editorSettings.editorMapGeneral.circularMap);
 	}
 
 	getAutocompleteEntries()
@@ -25,12 +25,12 @@ classEditorSettingControls.CircularMap = class extends EditorSettingControlCheck
 
 	onPress(checked)
 	{
-		this.setupWindow.controls.editorSettings.editorMapCircular.setCircularMap(checked);
+		this.setupWindow.controls.editorSettings.editorMapGeneral.setCircularMap(checked);
 	}
 };
 
-classEditorSettingControls.CircularMap.prototype.TitleCaption = translate("Circular Map");
+classEditorSettingControls.CircularMap.prototype.TitleCaption = translateWithContext("editor", "Circular Map");
 
-classEditorSettingControls.CircularMap.prototype.Tooltip = translate("Set the sahpe of your map in circular way");
+classEditorSettingControls.CircularMap.prototype.Tooltip = translateWithContext("editor", "Set the shape of your map in circular way");
 
 classEditorSettingControls.CircularMap.prototype.AutocompleteOrder = 0;
