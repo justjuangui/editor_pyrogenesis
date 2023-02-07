@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Scenario version="7">
-	<Terrain patches="16" texture="editor_grass_dirt_01" priority="0" height="4096"/>
+	<Terrain patches="16" texture="editor" priority="0" height="4096"/>
 	<Environment>
 		<SkySet>desert</SkySet>
 		<SunColor r="0.749020" g="0.749020" b="0.749020"/>
