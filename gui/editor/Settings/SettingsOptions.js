@@ -10,21 +10,11 @@ EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.SettingsOpti
 		]
 	},
 	{
-		"label": translateWithContext("editor settings tab name", "Player"),
-		"settings": [
-
-		]
-	},
-	{
-		"label": translateWithContext("editor settings tab name", "Game Type"),
-		"settings": [
-
-		]
-	},
-	{
 		"label": translateWithContext("editor settings tab name", "Players Settings"),
 		"settings": [
-
+			"PlayerNumber",
+			"PlayerIndex",
+			"PlayerCaption"
 		]
 	}
 ]

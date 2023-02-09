@@ -11,7 +11,7 @@
 		},
 		{
 			"Name": "Player 1",
-			"Civ": "athen",
+			"Civ": "editor",
 			"Color": { "r": 21, "g": 55, "b": 149 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -19,7 +19,7 @@
 		},
 		{
 			"Name": "Player 2",
-			"Civ": "cart",
+			"Civ": "editor",
 			"Color": { "r": 150, "g": 20, "b": 20 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -27,7 +27,7 @@
 		},
 		{
 			"Name": "Player 3",
-			"Civ": "gaul",
+			"Civ": "editor",
 			"Color": { "r": 86 , "g": 180, "b": 31 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -35,7 +35,7 @@
 		},
 		{
 			"Name": "Player 4",
-			"Civ": "iber",
+			"Civ": "editor",
 			"Color": { "r": 231, "g": 200, "b": 5 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -43,7 +43,7 @@
 		},
 		{
 			"Name": "Player 5",
-			"Civ": "mace",
+			"Civ": "editor",
 			"Color": { "r": 50, "g": 170, "b": 170 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -51,7 +51,7 @@
 		},
 		{
 			"Name": "Player 6",
-			"Civ": "maur",
+			"Civ": "editor",
 			"Color": { "r": 160, "g": 80, "b": 200 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -59,7 +59,7 @@
 		},
 		{
 			"Name": "Player 7",
-			"Civ": "pers",
+			"Civ": "editor",
 			"Color": { "r": 220, "g": 115, "b": 16 },
 			"AI": "petra",
 			"AIDiff": 3,
@@ -67,7 +67,7 @@
 		},
 		{
 			"Name": "Player 8",
-			"Civ": "rome",
+			"Civ": "editor",
 			"Color": { "r": 64, "g": 64, "b": 64 },
 			"AI": "petra",
 			"AIDiff": 3,

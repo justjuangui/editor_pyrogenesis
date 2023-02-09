@@ -46,6 +46,12 @@
 					<include file="gui/editorcommon/EditorSettings/EditorSettingControlTextbox.xml"/>
 				</object>
 			</repeat>
+
+			<repeat count="15" var="n">
+				<object>
+					<include file="gui/editorcommon/EditorSettings/EditorSettingControlCaption.xml"/>
+				</object>
+			</repeat>
 		</object>
 
 		<object name="onscreenToolTip" type="text" font="sans-14" textcolor="white"	hidden="true" sprite="BackgroundTranslucent" size="16 100%-44 50%+144 100%-16"/>

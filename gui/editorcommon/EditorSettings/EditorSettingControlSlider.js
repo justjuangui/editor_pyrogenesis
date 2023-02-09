@@ -61,10 +61,7 @@ class EditorSettingControlSlider extends EditorSettingControl
 	onValueChangeSuper()
 	{
 		if (!this.isInGuiUpdate && !this.timer)
-			this.timer = setTimeout(() => {
-				this.onValueChange(this.slider.value);
-				delete this.timer;
-			}, this.Timeout);
+			this.onValueChange(this.slider.value);
 	}
 
 	onPress()
@@ -77,8 +74,6 @@ class EditorSettingControlSlider extends EditorSettingControl
 		this.isPressing = false;
 	}
 }
-
-EditorSettingControlSlider.prototype.Timeout = 50;
 
 EditorSettingControlSlider.prototype.UnknownValue =
 	translateWithContext("settings value", "Unknown");

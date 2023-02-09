@@ -31,28 +31,10 @@
 		"PlayerData":
 		[
 			{
-				"Civ": "han"
+				"Civ": "editor"
 			},
 			{
-				"Civ": "cart"
-			},
-			{
-				"Civ": "gaul"
-			},
-			{
-				"Civ": "iber"
-			},
-			{
-				"Civ": "pers"
-			},
-			{
-				"Civ": "ptol"
-			},
-			{
-				"Civ": "rome"
-			},
-			{
-				"Civ": "spart"
+				"Civ": "editor"
 			}
 		],
 		"CircularMap": true
