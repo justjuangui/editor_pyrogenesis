@@ -60,7 +60,7 @@ function LoadPlayerSettings(settings, newPlayers)
 
 function GetPlayerTemplateName()
 {
-	return "template_player";
+	return "special/players/editor";
 }
 
 Engine.RegisterGlobal("LoadPlayerSettings", LoadPlayerSettings);

@@ -14,7 +14,10 @@ EditorWindow.prototype.ClassSetupWindowPages.SettingsPage.prototype.SettingsOpti
 		"settings": [
 			"PlayerNumber",
 			"PlayerIndex",
-			"PlayerCaption"
+			"PlayerCaption",
+			"PlayerName",
+			"PlayerCiv",
+			"PlayerAI"
 		]
 	}
 ]

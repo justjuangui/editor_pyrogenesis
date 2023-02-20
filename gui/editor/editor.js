@@ -9,6 +9,7 @@ function init(initData, hotloadData)
 
 	// disabled constraint in camera
 	Engine.GameView_SetConstrainCameraEnabled(false);
+	Engine.SetCameraData(140, 720, -140, 0.87, 0.51, 1);
 
 	if (!editorWindow)
 		editorWindow = new EditorWindow(initData, hotloadData);

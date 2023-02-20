@@ -2,15 +2,26 @@ EditorSettings.prototype.Attributes.EditorPlayerGeneral = class extends EditorSe
 {
 	init()
 	{
+		var defaultValues = this.FN_LOAD_DEFAULT();
 		this.playerNumber = 2;
 		this.playerData = [];
 		this.playerIndex = 0;
-		this.maxPlayer = this.MAX_PLAYERS;
+		this.maxPlayer = defaultValues.MAX_PLAYERS;
+		this.defaultCiv = defaultValues.DEFAULT_CIV;
+		this.getPropertyDefault = defaultValues.GET_PROPERTY_DEFAULT;
+
+		this.currentName = "";
+		this.currentCiv = "";
+		this.currentAI = "";
 	}
 
 	toInitAttributes(attribs)
 	{
-		attribs.settings.PlayerData = this.playerData;
+		attribs.settings.PlayerData = this.playerData.map(p => {
+			if (p.AI && p.AI === 'none')
+				p.AI = undefined;
+			return p;
+		});
 	}
 
 	fromInitAttributes(attribs)
@@ -27,7 +38,7 @@ EditorSettings.prototype.Attributes.EditorPlayerGeneral = class extends EditorSe
 
 	setPlayerData(playerData, index)
 	{
-		this.playerData[index] = playerData || { "civ": this.DEFAULT_CIV };
+		this.playerData[index] = playerData || { "civ": this.defaultCiv };
 	}
 
 	setPlayerNumber(playerNumber)
@@ -49,8 +60,45 @@ EditorSettings.prototype.Attributes.EditorPlayerGeneral = class extends EditorSe
 	setPlayerIndex(playerIndex)
 	{
 		this.playerIndex = Math.max(0, Math.min(playerIndex, this.playerNumber - 1));
+
+		this.currentName = this.playerData[this.playerIndex].Name || this.getPropertyDefault(this.playerIndex, "Name");
+		this.currentCiv = this.playerData[this.playerIndex].Civ || this.getPropertyDefault(this.playerIndex, "Civ");
+		this.currentAI = this.playerData[this.playerIndex].AI || this.getPropertyDefault(this.playerIndex, "AI");
+	}
+
+	setCurrentName(newName)
+	{
+		this.currentName = newName;
+		this.playerData[this.playerIndex].Name = this.currentName;
+	}
+
+	setCurrentCiv(newCiv)
+	{
+		this.currentCiv = newCiv;
+		this.playerData[this.playerIndex].Civ = this.currentCiv;
+	}
+
+	setCurrentAI(newAI)
+	{
+		this.currentAI = newAI;
+		this.playerData[this.playerIndex].AI = this.currentAI;
 	}
 };
 
-EditorSettings.prototype.Attributes.EditorPlayerGeneral.prototype.MAX_PLAYERS = 8;
-EditorSettings.prototype.Attributes.EditorPlayerGeneral.prototype.DEFAULT_CIV = "editor";
+EditorSettings.prototype.Attributes.EditorPlayerGeneral.prototype.FN_LOAD_DEFAULT = () => {
+	const playerDefaults = Engine.ReadJSONFile("simulation/data/settings/player_defaults.json").PlayerData;
+
+	//remove gaia settings
+	if (!playerDefaults)
+		playerDefaults = [];
+
+	if (playerDefaults[0] && playerDefaults[0].Civ && playerDefaults[0].Civ === 'gaia')
+		playerDefaults.shift();
+
+	return {
+		MAX_PLAYERS: playerDefaults.length,
+		DEFAULT_CIV: "editor",
+		GET_PROPERTY_DEFAULT: (idx, property) =>
+			(playerDefaults && playerDefaults[idx] && (property in playerDefaults[idx])) ? playerDefaults[idx][property] : undefined
+	};
+};

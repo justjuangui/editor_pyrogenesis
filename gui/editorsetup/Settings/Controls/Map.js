@@ -25,7 +25,7 @@ classEditorSettingControls.Map = class extends EditorSettingControlDropdown
 		if (this.editorSettings.editorData.type !== "new" && this.editorSettings.mapType.mapType)
 		{
 			const mapTypeSelected = this.mapTypes.filter(mt => mt.Name === this.editorSettings.mapType.mapType)[0];
-			const listMaps = Engine.ListDirectoryFiles(mapTypeSelected.Path, `*.${mapTypeSelected.Suffix}`, true);
+			const listMaps = Engine.ListDirectoryFiles(mapTypeSelected.Path, `*${mapTypeSelected.Suffix}`, true);
 			this.dropdown.list = listMaps;
 			this.dropdown.list_data = listMaps;
 		}
@@ -52,7 +52,7 @@ classEditorSettingControls.Map = class extends EditorSettingControlDropdown
 
 	onSelectionChange(itemIdx)
 	{
-		// this.editorSettings.mapType.setMapType(this.options[itemIdx].Name);
+		this.editorSettings.map.setMap(this.dropdown.list_data[itemIdx]);
 	}
 };
 

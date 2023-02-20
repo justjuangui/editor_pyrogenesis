@@ -52,7 +52,9 @@ class BaseSettings
 		// To check in the loop below if something change we just compare
 		// the entire component. However, we must ignore the "settings"
 		// keyword to avoid cyclic objects.
-		const getComponentData = comp => Object.keys(this[comp]).map(key => key == "settings" ? undefined : this[comp][key]);
+		const getComponentData = comp => Object.keys(this[comp]).map(key =>
+			(key == "settings" || typeof this[comp][key] == 'function') ? undefined : this[comp][key]
+		);
 
 		// When we have looped components.length + 1 times, we are considered stuck.
 		for (let i = 0; i <= components.length; ++i)
