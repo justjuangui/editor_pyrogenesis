@@ -73,6 +73,6 @@ classEditorSettingControls.EditorType = class extends EditorSettingControlDropdo
 
 classEditorSettingControls.EditorType.prototype.TitleCaption = translate("Editor Type");
 classEditorSettingControls.EditorType.prototype.Tooltip = translate("Select a option.");
-classEditorSettingControls.EditorType.prototype.EditorMapDefault = "maps/_default.xml";
+classEditorSettingControls.EditorType.prototype.EditorMapDefault = "maps/scenarios/_default.xml";
 classEditorSettingControls.EditorType.prototype.EditorMapTypeDefault = "scenario";
 classEditorSettingControls.EditorType.prototype.AutocompleteOrder = 0;
