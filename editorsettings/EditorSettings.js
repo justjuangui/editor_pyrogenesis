@@ -21,9 +21,3 @@ class EditorSettings extends BaseSettings {
 		return { settings: {} };
 	}
 }
-
-Object.defineProperty(EditorSettings.prototype, "Attributes", {
-	"value": {},
-	"enumerable": false,
-	"writable": true,
-});

@@ -7,5 +7,6 @@ EditorWindow.prototype.ClassControls.GuiController = class extends ObservableSet
 
 		this.mapSettingsIsOpen = false;
 		this.mapChange = false;
+		this.saveSettingsIsOpen = false;
 	}
 }

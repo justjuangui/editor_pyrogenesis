@@ -29,7 +29,7 @@ EditorWindow.prototype.ClassSetupWindowPages.SettingsPage = class
 
 		this.setupWindow.registerLoadHandler(() => {
 			this.editorSettingControlManager = this.setupWindow.controls.editorSettingsControllerManager;
-			this.setupWindow.controls.guiController.watch(() => this.onMapSettingsIsOpenChange(), ["mapSettingsIsOpen"])
+			this.setupWindow.controls.guiController.watch(() => this.onMapSettingsIsOpenChange(), ["mapSettingsIsOpen"]);
 			this.setupSettingsUI();
 		});
 	}
