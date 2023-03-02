@@ -16,7 +16,7 @@ class BaseSettings
 		}
 		for (let comp in this)
 			if (this[comp].init)
-				this[comp].init();
+				this[comp].init(this);
 
 		return this;
 	}
@@ -111,6 +111,12 @@ class BaseSettings
 }
 
 Object.defineProperty(BaseSettings.prototype, "Attributes", {
+	"value": {},
+	"enumerable": false,
+	"writable": true,
+});
+
+Object.defineProperty(BaseSettings.prototype, "Helpers", {
 	"value": {},
 	"enumerable": false,
 	"writable": true,

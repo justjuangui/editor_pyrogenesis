@@ -6,7 +6,7 @@ classEditorSettingControls.MapType = class extends EditorSettingControlDropdown
 
 		this.setupWindow.registerLoadHandler(() => {
 			this.editorSettings = this.setupWindow.controls.editorSettings;
-			this.options = this.editorSettings.mapType.MapTypes;
+			this.options = this.editorSettings.Helpers.MapTypes;
 
 			this.dropdown.list = this.options.map(o => o.Title);
 			this.dropdown.list_data = this.options.map(o => o.Name);

@@ -4,6 +4,7 @@
 	<script directory="gui/common/"/>
 	<script directory="gui/editorcommon/EditorSettings/" />
 	<script directory="editorsettings/"/>
+	<script directory="editorsettings/CommonAttributes/"/>
 	<script directory="editorsettings/EditorSetupAttributes/"/>
 	<script directory="gui/editorsetup/"/>
 	<script directory="gui/editorsetup/Controllers/"/>

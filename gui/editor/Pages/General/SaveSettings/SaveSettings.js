@@ -28,6 +28,10 @@ EditorWindow.prototype.ClassSetupWindowPages.SaveSettingsPage = class
 
 		this.setupWindow.registerLoadHandler(() => {
 			this.setupWindow.controls.guiController.watch(() => this.onSaveSettingsIsOpenChange(), ["saveSettingsIsOpen"]);
+
+			// Load mapType (Remove Random maps)
+			this.mapFolderCtrl.list = this.setupWindow.controls.editorSettings.Helpers.MapTypes.slice(0, -1).map(o => o.Title);
+			this.mapFolderCtrl.list_data = this.setupWindow.controls.editorSettings.Helpers.MapTypes.slice(0, -1).map(o => o.Name);
 		});
 	}
 
