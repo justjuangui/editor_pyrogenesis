@@ -69,6 +69,7 @@ class BaseSettings
 				const oldSettings = clone(getComponentData(comp));
 				if (this[comp].fromInitAttributes)
 					this[comp].fromInitAttributes(attribs);
+
 				reInit = reInit || !deepCompare(oldSettings, getComponentData(comp));
 			}
 			if (!reInit)

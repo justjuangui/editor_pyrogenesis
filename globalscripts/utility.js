@@ -15,7 +15,7 @@ function deepCompare(first, second)
 		return first === second;
 
 	// Make sure both variables have the same type.
-	if (first.constructor !== second.constructor)
+	if (typeof first !== typeof second)
 		return false;
 
 	// We know that the variables are of the same type so all we need to do is
@@ -39,8 +39,9 @@ function deepCompare(first, second)
 
 	// From now we will assume we have some kind of objects so that
 	// we can do a recursive check of the keys and values.
-	if (!(first instanceof Object) || !(second instanceof Object))
+	if (!(typeof first === 'object') || !(typeof second === 'object'))
 		return false;
+
 
 	// We cannot iterate over Sets, so collapse them to Arrays.
 	if (first instanceof Set)
