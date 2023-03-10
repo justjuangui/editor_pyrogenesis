@@ -16,7 +16,7 @@ classEditorSettingControls.PlayerCiv = class extends EditorSettingControlDropdow
 
 	setup()
 	{
-		let listValues = Engine.GetCivData();
+		let listValues = EditorEngine.GetCivData();
 		this.dropdown.list = listValues.map(x => x[1]);
 		this.dropdown.list_data = listValues.map(x => x[0]);
 

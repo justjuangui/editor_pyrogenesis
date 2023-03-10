@@ -8,7 +8,7 @@ EditorWindow.prototype.ClassControls.SaveControlManager = class
 		this.changedInitAttributes = null;
 
 		this.setupWindow.registerLoadHandler(() => {
-			this.initAttributes = Engine.GetInitAttributes();
+			this.initAttributes = EditorEngine.GetInitAttributes();
 		});
 	}
 
@@ -19,7 +19,7 @@ EditorWindow.prototype.ClassControls.SaveControlManager = class
 
 	onSaveMapInfo(info)
 	{
-		Engine.SaveMap(info.map);
+		EditorEngine.SaveMap(info.map);
 		this.changedInitAttributes = Object.assign(this.initAttributes, info, {editorType: 'changed'});
 		this.setupWindow.controls.guiController.saveSettingsIsOpen = false;
 	}

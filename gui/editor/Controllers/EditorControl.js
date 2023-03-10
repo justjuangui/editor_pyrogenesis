@@ -54,7 +54,7 @@ EditorWindow.prototype.ClassControls.EditorSettingsController = class
 
 	loadMapSettings()
 	{
-		let currentSettings = Engine.GetMapSettings();
+		let currentSettings = EditorEngine.GetMapSettings();
 		this.parseSettings({
 			settings: currentSettings
 		});
@@ -70,7 +70,7 @@ EditorWindow.prototype.ClassControls.EditorSettingsController = class
 	{
 		let currentSettings = this.getSettings().settings;
 
-		Engine.SetMapSettings(currentSettings);
+		EditorEngine.SetMapSettings(currentSettings);
 	}
 }
 
