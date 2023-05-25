@@ -57,6 +57,21 @@ class Player
 	{
 		this.color = { "r": r / 255, "g": g / 255, "b": b / 255, "a": 1 };;
 	}
+
+	Serialize()
+	{
+		let state = {};
+		for (let key in this)
+			if (this.hasOwnProperty(key))
+				state[key] = this[key];
+		return state;
+	}
+
+	Deserialize(state)
+	{
+		for (let prop in state)
+			this[prop] = state[prop];
+	}
 }
 
 Player.prototype.Schema = "<empty />";

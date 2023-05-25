@@ -29,10 +29,7 @@ function LoadPlayerSettings(settings, newPlayers)
 		const settingsNumPlayers = playerData?.length ?? playerDefaults.length;
 
 		while (numPlayers < settingsNumPlayers)
-		{
-			cmpPlayerManager.AddPlayer(GetPlayerTemplateName());
-			numPlayers++;
-		}
+			cmpPlayerManager.AddPlayer(GetPlayerTemplateName(getPlayerSetting(numPlayers++, "Civ")));
 
 		for (; numPlayers > settingsNumPlayers; numPlayers--)
 			cmpPlayerManager.RemoveLastPlayer();
@@ -46,7 +43,8 @@ function LoadPlayerSettings(settings, newPlayers)
 		const cmpIdentity = Engine.QueryInterface(entityId, IID_Identity);
 
 		cmpIdentity.SetName(getPlayerSetting(i, "Name"));
-		cmpPlayer.SetColor(getPlayerSetting(i, "Color"));
+		const color = getPlayerSetting(i, "Color");
+		cmpPlayer.SetColor(color.r, color.g, color.b);
 
 		// Special case for gaia
 		if (i == 0)
@@ -58,9 +56,9 @@ function LoadPlayerSettings(settings, newPlayers)
 	}
 }
 
-function GetPlayerTemplateName()
+function GetPlayerTemplateName(civ)
 {
-	return "special/players/editor";
+	return "special/players/"+ civ;
 }
 
 Engine.RegisterGlobal("LoadPlayerSettings", LoadPlayerSettings);
