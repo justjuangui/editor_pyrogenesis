@@ -17,7 +17,7 @@ EditorWindow.prototype.ClassControls.SimulationController = class extends Observ
 			return;
 		}
 
-		if (EditorEngine.PlaySimulation())
+		if (MapEditor.PlaySimulation())
 		{
 			this.isStarted = true;
 			this.isPlaying = true;
@@ -34,7 +34,7 @@ EditorWindow.prototype.ClassControls.SimulationController = class extends Observ
 			return;
 		}
 
-		if (EditorEngine.StopSimulation())
+		if (MapEditor.StopSimulation())
 		{
 			this.isStarted = false;
 			this.isPlaying = false;
@@ -51,7 +51,7 @@ EditorWindow.prototype.ClassControls.SimulationController = class extends Observ
 			return;
 		}
 
-		EditorEngine.ResumeOrPauseSimulation();
+		MapEditor.ResumeOrPauseSimulation();
 		this.isPlaying = !this.isPlaying;
 	}
 }

@@ -9,7 +9,7 @@ editorMenus.Menus.SaveMenu = class
 
 	onPress()
 	{
-		EditorEngine.SaveMap("maps/scenarios/demo.xml");
+		MapEditor.SaveMap("maps/scenarios/demo.xml");
 	}
 }
 

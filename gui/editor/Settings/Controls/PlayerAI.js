@@ -16,7 +16,7 @@ classEditorSettingControls.PlayerAI = class extends EditorSettingControlDropdown
 
 	setup()
 	{
-		let listValues = EditorEngine.GetAIData();
+		let listValues = MapEditor.GetAIData();
 		this.dropdown.list = ["None"].concat(listValues.map(x => x.data.name));
 		this.dropdown.list_data = ["none"].concat(listValues.map(x => x.id));
 

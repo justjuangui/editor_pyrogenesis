@@ -52,21 +52,22 @@ class BaseSettings
 		// To check in the loop below if something change we just compare
 		// the entire component. However, we must ignore the "settings"
 		// keyword to avoid cyclic objects.
-		const getComponentData = comp => Object.keys(this[comp]).map(key =>
-			(key == "settings" || typeof this[comp][key] == 'function') ? undefined : this[comp][key]
-		);
+		const getComponentData = comp => Object.keys(this[comp])
+			.filter(key => key != "settings" && typeof this[comp][key] != 'function')
+			.map(key =>
+				this[comp][key]
+			);
 
 		// When we have looped components.length + 1 times, we are considered stuck.
 		for (let i = 0; i <= components.length; ++i)
 		{
 			// Re-init if any setting was changed, to make sure dependencies are cleared.
 			let reInit = false;
-			for (const comp in this)
-			{
-				if (exceptKeys.includes(comp))
-					continue;
 
+			for (const comp of components)
+			{
 				const oldSettings = clone(getComponentData(comp));
+				warn(uneval(oldSettings));
 				if (this[comp].fromInitAttributes)
 					this[comp].fromInitAttributes(attribs);
 

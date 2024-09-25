@@ -5,7 +5,7 @@ function init(initData, hotloadData)
 {
 	// In the editor the map is reveales for all
 	// we use here because preventing change settings from the map
-	EditorEngine.RevealMap();
+	MapEditor.RevealMap();
 
 	// disabled constraint in camera
 	Engine.GameView_SetConstrainCameraEnabled(false);
