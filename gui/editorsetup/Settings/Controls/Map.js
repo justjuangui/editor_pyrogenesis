@@ -26,8 +26,9 @@ classEditorSettingControls.Map = class extends EditorSettingControlDropdown
 		{
 			const mapTypeSelected = this.mapTypes.filter(mt => mt.Name === this.editorSettings.mapType.mapType)[0];
 			const listMaps = Engine.ListDirectoryFiles(mapTypeSelected.Path, `*${mapTypeSelected.Suffix}`, true);
-			this.dropdown.list = listMaps.filter(m => !m.endsWith("_default.xml")).map(m => m.replace(".xml", ""));
-			this.dropdown.list_data = listMaps.filter(m => !m.endsWith("_default.xml"));
+			const listMapsData = listMaps.filter(m => !m.endsWith("_default.xml")).map(m => m.replace(mapTypeSelected.Suffix, ""));
+			this.dropdown.list = listMapsData;
+			this.dropdown.list_data = listMapsData;
 		}
 
 		this.render();
